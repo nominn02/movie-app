@@ -1,6 +1,8 @@
 export const Header = () => {
     return (
-        <div className=""></div>
+        <div>
+            <nav className="flex"></nav>
+        </div>
     )
 }
 

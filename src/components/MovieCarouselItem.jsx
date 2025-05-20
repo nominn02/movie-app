@@ -1,15 +1,15 @@
 import { Star, Play } from "lucide-react";
- 
+
 export const MovieCarouselItem = () => {
   return (
-    <div>
+    <div className="relative">
       <img
         src="wicked.jpg"
-        className="w-screen min-h-[246px] md:max-h-[600px] md:relative"
+        className="w-screen min-h-[246px] md:max-h-[600px] md:relative  object-cover lg:object-top"
       />
       <div className="flex flex-col gap-[16px] m-[20px] md:absolute top-[178px] left-[120px] md:text-[white]  md:w-[404px]">
         <div className="flex w-[335px] h-[52px] justify-between items-center">
-          <div>
+          <div    >
             <p className="font-normal text-[14px]">Now Playing:</p>
             <p className="font-semibold text-[24px]">Wicked</p>
           </div>
@@ -23,7 +23,7 @@ export const MovieCarouselItem = () => {
             </div>
           </div>
         </div>
- 
+
         <p className="text-[12px]">
           Elphaba, a misunderstood young woman because of her green skin, and
           Glinda, a popular girl, become friends at Shiz University in the Land
@@ -37,5 +37,3 @@ export const MovieCarouselItem = () => {
     </div>
   );
 };
- 
- 
