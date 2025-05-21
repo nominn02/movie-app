@@ -9,7 +9,7 @@ export const Footer = () => {
         </div>
         <p>© 2024 Movie Z. All Rights Reserved.</p>
       </div>
-      <div className="flex gap-[20px]">
+      <div className="flex gap-[20px] ">
         <div className="font-[400] text-[12px]">
           <p>Contact Information</p>
           <div className="flex gap-[10px] py-[12px] items-center">
