@@ -1,7 +1,20 @@
 import { ArrowBigRight } from "lucide-react";
 import { MovieCard } from "./MovieCard";
+import { useEffect, useState } from "react";
+import { getTopRatedMovies } from "@/lib/api/get-top-rated-movies";
 
 export const TopRated = () => {
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const topRatedMovies = await getTopRatedMovies();
+
+      setTopRatedMovies(topRatedMovies);
+    };
+
+    fetchMovies();
+  }, []);
   return (
     <div className="flex flex-col gap-8 px-5 md:px-0">
       <div className="flex justify-between">
@@ -9,8 +22,8 @@ export const TopRated = () => {
         <ArrowBigRight />
       </div>
       <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {Array.from({ length: 10 }).map((_, index) => (
-          <MovieCard />
+        {topRatedMovies.slice(0, 10)?.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </div>

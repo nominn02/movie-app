@@ -1,7 +1,11 @@
 import { Star } from "lucide-react";
 
-export const MovieCard = ({ movie }) => {
-  const poster = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${movie?.poster_path}`;
+export const MovieCard = ({ movie, moviePopular, movieTopRated }) => {
+  const poster = `${process.env.NEXT_PUBLIC_TMDB_IMAGE_SERVICE_URL}${
+    movie?.poster_path ||
+    moviePopular?.poster_path ||
+    movieTopRated?.poster_path
+  }`;
 
   return (
     <div className="rounded-lg w-fit overflow-hidden">
@@ -12,11 +16,11 @@ export const MovieCard = ({ movie }) => {
         <div className="flex">
           <Star fill="yellow" strokeWidth={0} />
           <div className="flex pt-0.5 pl-1">
-            <p className="font-[500]">6.9</p>
+            <p className="font-[500]">{movie.vote_average}</p>
             <p className="font-[400] text-gray-400">/10</p>
           </div>
         </div>
-        <p className="pl-1">Dear Santa</p>
+        <p className="pl-1">{movie.title}</p>
       </div>
     </div>
   );

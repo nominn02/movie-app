@@ -26,7 +26,7 @@ export const MovieCarousel = () => {
 
   return (
     <Carousel
-      className=" relative"
+      className="relative"
       plugins={[
         Autoplay({
           delay: 2000,
@@ -36,7 +36,7 @@ export const MovieCarousel = () => {
         {nowPlayingMovie?.map((movie, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <MovieCarouselItem movie={movie} />
+              <MovieCarouselItem movie={movie} id={movie.id} />
             </div>
           </CarouselItem>
         ))}
