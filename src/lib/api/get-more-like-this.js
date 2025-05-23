@@ -10,6 +10,7 @@ export const getMoreLikeThis = async (id) => {
     }
   );
   const movies = await response.json();
+  console.log("response Similar movie", response);
 
  
   return movies?.results;
