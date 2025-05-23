@@ -1,29 +1,31 @@
 import { ArrowBigRight } from "lucide-react";
-import { MovieCard } from "./MovieCard";
-import { getUpcomingMovies } from "../lib/api/get-upcoming-movies";
+import { MovieCard } from "../MovieCard";
+import { getMoreLikeThis } from "@/lib/api/get-more-like-this";
 import { useEffect, useState } from "react";
 
-export const Upcoming = () => {
-  const [upcomingMovies, setUpcomingMovies] = useState([]);
+export const MoreLikeThis = () => {
+  const [moreLikeThis, setMoreLikeThis] = useState([]);
 
+  
   useEffect(() => {
     const fetchMovies = async () => {
-      const upcomingMovies = await getUpcomingMovies();
+      const moreLike = await getMoreLikeThis();
 
-      setUpcomingMovies(upcomingMovies);
+      setMoreLikeThis(moreLike);
     };
 
     fetchMovies();
   }, []);
+
   return (
     <div className="flex flex-col gap-8 px-5 md:px-0">
       <div className="flex justify-between">
-        <h1>Upcoming</h1>
+        <h1>More Like This</h1>
         <ArrowBigRight />
       </div>
       <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {upcomingMovies.slice(0, 10)?.map((movie) => (
-          <MovieCard id={movie.id} movie={movie} />
+        {moreLikeThis.slice(0, 5)?.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </div>

@@ -10,10 +10,11 @@ export const getMovieById = async (movieId) => {
         },
       }
     );
+
     const movies = await response.json();
+
     return movies;
   } catch (error) {
     console.log(error);
   }
 };
-

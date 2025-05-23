@@ -23,7 +23,7 @@ export const Popular = () => {
       </div>
       <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {popularMovies.slice(0, 10)?.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MovieCard id={movie.id} movie={movie} />
         ))}
       </div>
     </div>
