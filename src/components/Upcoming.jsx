@@ -29,3 +29,34 @@ export const Upcoming = () => {
     </div>
   );
 };
+
+// import { MovieCard } from "@/components/MovieCard";
+// import { getMovieByGenre } from "@/lib/api/get-by-genre";
+// import { useRouter } from "next/router";
+// import { useEffect, useState } from "react";
+
+// const GenrePage = () => {
+//   const router = useRouter();
+//   const genre = router.query.genre;
+//   <div>genre: {genre}</div>;
+
+//   const [byGenre, setByGenre] = useState([]);
+
+//   useEffect(() => {
+//     const fetchGenres = async () => {
+//       const { movie } = await getMovieByGenre();
+
+//       setByGenre(movie);
+//     };
+//     fetchGenres();
+//   }, []);
+
+//   return (
+//     <div>
+//       {byGenre?.map((movie) => (
+//         <MovieCard key={movie.genreIds} movie={movie}/>
+//       ))}
+//     </div>
+//   );
+// };
+// export default GenrePage;
