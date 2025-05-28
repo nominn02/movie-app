@@ -1,4 +1,5 @@
 import { Film, Moon, Search } from "lucide-react";
+import { MovieGenres } from "@/components/genres/MovieGenres";
 
 export const Header = () => {
   return (
@@ -8,6 +9,7 @@ export const Header = () => {
           <Film color="#4338ca" />
           <p className="text-[16px] text-indigo-700">Movie Z</p>
         </div>
+        <MovieGenres />
         <div className="flex gap-[12px]">
           <button className="flex w-[36px] h-[36px] rounded-md border-[#E4E4E7] shadow-sm justify-center items-center">
             <Search className="w-[12px] h-[12px]" />
