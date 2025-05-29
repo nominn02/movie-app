@@ -19,7 +19,12 @@ export const Popular = () => {
     <div className="flex flex-col gap-8 px-5 md:px-0">
       <div className="flex justify-between w-[1277px] h-[36px]">
         <h1 className="w-[114px] h-[32px] ">Popular</h1>
-        <ArrowBigRight />
+        <div>
+          <div className="flex gap-2">
+          See more
+          <ArrowBigRight />
+        </div>
+        </div>
       </div>
       <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {popularMovies.slice(0, 10)?.map((movie) => (

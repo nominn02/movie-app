@@ -1,24 +1,32 @@
 import { Film, Moon, Search } from "lucide-react";
-import { MovieGenres } from "@/components/genres/MovieGenres";
+import { cn } from "@/lib/utils";
+import { Input } from "./ui/input";
+import { HeaderGenre } from "./HeaderGenre";
 
 export const Header = () => {
   return (
-    <div>
-      <nav className="flex justify-between h-{59px] items-center">
-        <div className="flex">
-          <Film color="#4338ca" />
-          <p className="text-[16px] text-indigo-700">Movie Z</p>
+    <div className="flex gap-3 my-3 max-w-[1280px] mx-auto">
+      <div className="flex">
+        <Film color="#4338ca" />
+        <p className="text-[16px] text-indigo-700">Movie Z</p>
+      </div>
+      <HeaderGenre />
+      <div className="flex align-bottom ">
+        <div className={cn("relative text-muted-foreground", "w-[379px]")}>
+          <Search
+            size={16}
+            className="absolute left-3 top-1/2 -translate-y-1/2"
+          />
+          <Input
+            type="text"
+            placeholder="Search.."
+            className={cn("pl-[38px]", "border-none shadow-none")}
+          />
         </div>
-        <MovieGenres />
-        <div className="flex gap-[12px]">
-          <button className="flex w-[36px] h-[36px] rounded-md border-[#E4E4E7] shadow-sm justify-center items-center">
-            <Search className="w-[12px] h-[12px]" />
-          </button>
-          <button className="flex w-[36px] h-[36px] rounded-md border-[#E4E4E7] shadow-sm justify-center items-center ">
-            <Moon className="w-[12px] h-[12px]" />
-          </button>
-        </div>
-      </nav>
+      </div>
+      <button className="flex w-[36px] h-[36px] rounded-md border-[#E4E4E7] shadow-sm justify-center items-center ">
+        <Moon className="w-[12px] h-[12px]  " />
+      </button> 
     </div>
   );
 };

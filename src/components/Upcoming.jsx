@@ -19,7 +19,12 @@ export const Upcoming = () => {
     <div className="flex flex-col gap-8 px-5 md:px-0">
       <div className="flex justify-between">
         <h1>Upcoming</h1>
-        <ArrowBigRight />
+        <div>
+          <div className="flex gap-2">
+          See more
+          <ArrowBigRight />
+        </div>
+        </div>
       </div>
       <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {upcomingMovies.slice(0, 10)?.map((movie) => (

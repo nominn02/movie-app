@@ -2,16 +2,13 @@ import { getMovieGenres } from "@/lib/api/get-movie-genres";
 
 import { useEffect, useState } from "react";
 
-import {
-  DropdownMenu,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-} from "@/components/ui/dropdown-menu";
-import Link from "next/link";
+import { Badge } from "../ui/badge";
+import { useRouter } from "next/router";
 
 export const MovieGenres = () => {
+    const router = useRouter();
   const [movieGenres, setMovieGenres] = useState([]);
+  const [genreIds, setGenreIds] = useState([]);
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -22,16 +19,25 @@ export const MovieGenres = () => {
     fetchGenres();
   }, []);
 
+   const handleSelectGenre = (id, name) => {
+      setGenreIds([...genreIds, id]);
+
+      router.push(`/genres?genreIds=${genreIds}&name=${name}`);
+    };
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger>Genres</DropdownMenuTrigger>
-      <DropdownMenuContent>
+ 
+        <div className="my-4">
         {movieGenres?.map((genre) => (
-          <Link key={genre.id} href={`/genre/${genre.id}`}>
-            <DropdownMenuItem>{genre.name}</DropdownMenuItem>
-          </Link>
+         <Badge
+          className="w-fit bg-white text-foreground hover:bg-none text-[12px] font-bold"
+          onClick={() => handleSelectGenre(genre.id, genre.name)}
+        >
+          {genre.name}  
+        </Badge>
         ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+        </div>
+     
   );
 };
+
