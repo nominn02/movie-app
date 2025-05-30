@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { Badge } from "../ui/badge";
 import { useRouter } from "next/router";
+import { Button } from "../ui/button";
 
 export const MovieGenres = () => {
     const router = useRouter();
@@ -29,12 +30,12 @@ export const MovieGenres = () => {
  
         <div className="my-4">
         {movieGenres?.map((genre) => (
-         <Badge
+         <Button
           className="w-fit bg-white text-foreground hover:bg-none text-[12px] font-bold"
           onClick={() => handleSelectGenre(genre.id, genre.name)}
         >
           {genre.name}  
-        </Badge>
+        </Button>
         ))}
         </div>
      
