@@ -1,8 +1,9 @@
-import { Film, Moon, Search } from "lucide-react";
+import { Film, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { HeaderGenre } from "./HeaderGenre";
 import Link from "next/link";
+import { ModeToggle } from "./ModeToggle";
 
 export const Header = () => {
   return (
@@ -28,9 +29,7 @@ export const Header = () => {
           />
         </div>
       </div>
-      <button className="flex w-[36px] h-[36px] rounded-md border-[#E4E4E7] shadow-sm justify-center items-center ">
-        <Moon className="w-[12px] h-[12px]  " />
-      </button> 
+      <ModeToggle/>
     </div>
   );
 };
