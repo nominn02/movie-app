@@ -31,7 +31,7 @@
 //        <Footer/>
 //     </div>
 //   );
-// };
+// // };
 
 // export default GenrePage;
 
