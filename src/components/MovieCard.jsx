@@ -19,7 +19,7 @@ export const MovieCard = ({ movie, moviePopular, movieTopRated, id, }) => {
         <div className="flex">
           <Star fill="yellow" strokeWidth={0} />
           <div className="flex pt-0.5 pl-1">
-            <p className="font-[500]">{movie.vote_average}</p>
+            <p className="font-[500]">{movie.vote_average.toFixed(1)}</p>
             <p className="font-[400] text-gray-400">/10</p>
           </div>
         </div>

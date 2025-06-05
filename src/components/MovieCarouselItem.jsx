@@ -21,7 +21,7 @@ export const MovieCarouselItem = ({ movie, id }) => {
               <Star className=" text-yellow-300 fill-amber-300 w-[16px] h-[16px]" />
               <div className="flex">
                 <p className="text-[18px]  font-semibold text-[black] md:text-[white]">
-                  {movie.vote_average}
+                  {movie.vote_average.toFixed(1)}
                 </p>
                 <p className="text-[18px] font-medium text-grey-400">/10</p>
               </div>
