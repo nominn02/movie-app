@@ -19,7 +19,7 @@ export const Upcoming = () => {
   return (
     <div className="flex flex-col gap-8 px-5 md:px-0">
      <div className="flex justify-between w-[1277px] h-[36px]">
-        <h1 className="text-2xl font-semibold pl-1 ">Upcoming</h1>
+        <h1 className="text-2xl font-semibold pl-1  ">Upcoming</h1>
         <Link href={`/category/Upcoming`}>
           <button className="flex py-2 px-4 gap-1 text-sm font-medium">
           See more
