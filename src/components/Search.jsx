@@ -45,5 +45,6 @@ return (
         <SearchResult movies={movies} setSearchValue={setSearchValue} />
       )}
     </div>
+  
   );
 };
